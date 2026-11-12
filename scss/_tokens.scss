@@ -1,0 +1,46 @@
+$colors-light: (
+  bg: #fbf7ee,
+  surface: #ffffff,
+  ink: #12374a,
+  muted: #53707f,
+  line: #e4dcc8,
+  accent: #c4452d,
+  accent-ink: #ffffff,
+  deep: #12374a
+);
+
+$colors-dark: (
+  bg: #0e1d26,
+  surface: #162b37,
+  ink: #eef4f6,
+  muted: #9fb7c2,
+  line: #25414f,
+  accent: #e0644a,
+  accent-ink: #0e1d26,
+  deep: #0b1820
+);
+
+$radii: (
+  sm: 0.6rem,
+  md: 0.7rem,
+  lg: 1rem,
+  xl: 1.25rem,
+  pill: 999px
+);
+
+$breakpoints: (
+  sm: 600px,
+  lg: 960px
+);
+
+$fonts: (
+  head: (Lora, Georgia, serif),
+  body: (Rubik, system-ui, "Segoe UI", sans-serif)
+);
+
+$spaces: (
+  1: 0.5rem,
+  2: 1rem,
+  3: 1.5rem,
+  4: 2rem
+);

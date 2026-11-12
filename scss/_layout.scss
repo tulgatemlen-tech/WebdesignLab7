@@ -1,0 +1,168 @@
+@use "sass:map";
+@use "tokens" as *;
+@use "tools" as *;
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+
+  @include respond(lg) {
+    padding: 1rem 2rem;
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    font: 700 1.25rem var(--font-head);
+    color: var(--ink);
+    text-decoration: none;
+  }
+}
+
+.menu-btn,
+.theme-btn {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: map.get($radii, sm);
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.menu-btn {
+  @include respond(lg) {
+    display: none;
+  }
+}
+
+.theme-btn {
+  align-self: flex-start;
+  transition: transform 0.4s;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+
+  @include respond(lg) {
+    align-self: center;
+  }
+}
+
+.nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.25rem;
+
+  &.open {
+    display: flex;
+  }
+
+  @include respond(lg) {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+  }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+    padding: 0.6rem 0;
+    font-weight: 500;
+    transition: color 0.25s, transform 0.25s;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    @include respond(lg) {
+      padding: 0.25rem 0;
+    }
+  }
+}
+
+.hero {
+  padding: 5rem 0;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(rgb(0 0 0 / 0.45), rgb(0 0 0 / 0.45)),
+    url("img/tolgoi.jpg") center / cover no-repeat;
+
+  @include respond(sm) {
+    padding-top: 3.5rem;
+  }
+
+  &-text {
+    width: min(100%, 72rem);
+    margin: 0 auto;
+    padding: 0 1rem;
+    animation: fadeUp var(--speed) ease both;
+
+    @include respond(sm) {
+      padding: 0 2rem;
+    }
+
+    p {
+      max-width: 34rem;
+      margin: 0 0 1.5rem;
+      opacity: 0.85;
+    }
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include respond(lg) {
+    grid-template-columns: minmax(0, 1fr) 18rem;
+  }
+}
+
+.sidebar {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  align-self: start;
+  margin-top: 2rem;
+
+  @include respond(lg) {
+    position: sticky;
+    top: 1rem;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+  }
+}
+
+.site-footer {
+  margin-top: 2rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+
+  p {
+    margin: 0;
+  }
+}

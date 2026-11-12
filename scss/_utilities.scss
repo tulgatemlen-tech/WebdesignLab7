@@ -1,0 +1,11 @@
+@use "tokens" as *;
+
+@each $key, $val in $spaces {
+  .mt-#{$key} { margin-top: $val; }
+  .mb-#{$key} { margin-bottom: $val; }
+  .p-#{$key}  { padding: $val; }
+}
+
+@each $align in (left, center, right) {
+  .text-#{$align} { text-align: $align; }
+}
